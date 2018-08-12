@@ -1,0 +1,40 @@
+
+<!--<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <h1>Post List</h1>
+    </div>
+    <div class="col create-post" *ngIf="userRole === 'RECRUITER'">
+    <a routerLink="/createPost">
+      <span class="badge">Create Post</span> 
+    </a>
+    </div>
+  </div>
+  <div class="list-group">
+      <div *ngFor="let post of posts" class="list-group-item list-group-item-action flex-column align-items-start ">
+          <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{post.title}}</h5>
+              <small>{{post.date | date:'medium'}}</small>
+          </div>
+          <p class="mb-1">{{post.description}}</p>
+          <div class="d-flex w-100 justify-content-between">
+              <strong>Location: {{post.location}}</strong>
+              <strong>Status: {{post.status}}</strong>
+          </div>
+          
+      
+        </div>
+      
+  </div>
+  
+</div>
+

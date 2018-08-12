@@ -1,0 +1,27 @@
+<div class="container">
+
+   
+
+    <form name="login-form" (ngSubmit)="loginForm.form.valid && onSubmit()" class="login-form" #loginForm="ngForm">
+        <div class="form-group">
+          <label for="name">Please enter username to login : </label>
+          <input #name="ngModel" required class="form-control" type="text" name="name" placeholder="Username" [(ngModel)]="user.name"/>  
+        
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+              Username is required to login.
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="form-group">
+          <button [disabled]="loginForm.invalid || !userRole"  type="submit" class="btn btn-success"> 
+            Submit
+          </button>
+        </div>
+      
+      </form>
+
+
+</div>
