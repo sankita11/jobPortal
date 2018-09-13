@@ -16,7 +16,7 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  private postUrl = 'https://bhvt80jzpd.execute-api.us-east-2.amazonaws.com/Stage/MyResource?TableName=posts';
+  private postUrl = '';
 
   getPosts (): Observable<Post[]> {
     return this.http.get<Post>(this.postUrl)
